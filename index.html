@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Preserve a Natureza - Conscientização Ambiental</title>
+  <style>
+    /* Base styles and reset */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #d4e9d4, #a6d8a8);
+      color: #1b3a2e;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 12px;
+    }
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 4rem;
+    }
+    header {
+      background-color: #2d6a29;
+      color: #e5f4e3;
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #c1e1c1;
+    }
+
+    /* Hero section */
+    .hero {
+      text-align: center;
+      padding: 5rem 1rem 6rem;
+      background: url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+      color: #f4f9f4;
+      text-shadow: 0 3px 6px rgba(0,0,0,0.7);
+      border-radius: 40px;
+      margin: 2rem 0 4rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    .hero h2 {
+      font-size: 3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      letter-spacing: 3px;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    /* Facts section */
+    section.facts {
+      background: #e7f3e7;
+      border-radius: 40px;
+      padding: 3rem 2rem;
+      margin-bottom: 4rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    section.facts h3 {
+      font-size: 2rem;
+      color: #2e6b29;
+      margin-bottom: 2rem;
+      text-align: center;
+      border-bottom: 3px solid #84c284;
+      display: inline-block;
+      padding-bottom: 0.25rem;
+      font-weight: 700;
+    }
+    .facts-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 2rem;
+      color: #3a5e3a;
+    }
+    .fact-item {
+      background: #f7fcf7;
+      padding: 1.5rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 14px rgba(132, 194, 132, 0.3);
+      transition: transform 0.3s ease;
+    }
+    .fact-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(132, 194, 132, 0.5);
+    }
+    .fact-item h4 {
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      color: #216018;
+    }
+    /* Tips section */
+    section.tips {
+      margin-bottom: 4rem;
+    }
+    section.tips h3 {
+      font-size: 2rem;
+      color: #2c5d2c;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-weight: 700;
+      border-bottom: 3px solid #75b375;
+      display: inline-block;
+      padding-bottom: 0.25rem;
+    }
+    .tips-list {
+      list-style: none;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #325a32;
+      padding-left: 1rem;
+    }
+    .tips-list li {
+      position: relative;
+      padding-left: 1.8rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    .tips-list li::before {
+      content: "🌿";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    /* Call to action */
+    .cta {
+      text-align: center;
+      background: #3a7d3a;
+      padding: 3rem 1rem;
+      color: #e8f8e8;
+      border-radius: 40px;
+      box-shadow: 0 6px 20px rgba(0, 59, 0, 0.5);
+      margin-bottom: 4rem;
+    }
+    .cta h3 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    .cta p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      font-weight: 600;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.4;
+    }
+    .btn {
+      background-color: #a1d99b;
+      color: #1b3a2e;
+      border: none;
+      padding: 15px 45px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(161, 217, 155, 0.6);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      user-select: none;
+    }
+    .btn:hover {
+      background-color: #7fc97f;
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(127, 201, 127, 0.8);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #2d6a29;
+      color: #d4e9d4;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+      box-shadow: 0 -4px 10px rgba(0,0,0,0.15);
+    }
+    footer .social-links a {
+      margin: 0 1rem;
+      font-size: 1.5rem;
+      color: #a9d5a9;
+      transition: color 0.3s ease;
+      user-select: none;
+    }
+    footer .social-links a:hover {
+      color: #e5f4e3;
+    }
+
+    /* Responsive */
+    @media (min-width: 768px) {
+      .hero {
+        padding: 6rem 2rem 8rem;
+      }
+      .hero h2 {
+        font-size: 4.5rem;
+      }
+      .hero p {
+        font-size: 1.6rem;
+      }
+      .tips-list {
+        font-size: 1.2rem;
+      }
+      .cta h3 {
+        font-size: 3.2rem;
+      }
+      .btn {
+        padding: 18px 60px;
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Preserve a Natureza</h1>
+      <nav>
+        <a href="#facts">Fatos</a>
+        <a href="#tips">Dicas</a>
+        <a href="#cta">Faça Sua Parte</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" aria-label="Chamada para preservação da natureza">
+    <h2>Preserve o Planeta, Preserve a Vida</h2>
+    <p>Cada pequena ação conta para garantir um futuro sustentável para as próximas gerações.</p>
+  </section>
+
+  <main class="container" role="main">
+    <section class="facts" id="facts" aria-labelledby="fatos-title">
+      <h3 id="fatos-title">Fatos Importantes sobre a Preservação</h3>
+      <div class="facts-list">
+        <article class="fact-item" tabindex="0">
+          <h4>1,6 bilhão de pessoas dependem das florestas</h4>
+          <p>As florestas fornecem alimento, combustível e matéria-prima para milhões de pessoas.</p>
+        </article>
+        <article class="fact-item" tabindex="0">
+          <h4>80% da biodiversidade terrestre</h4>
+          <p>É encontrada nos ecossistemas naturais ameaçados pela ação humana.</p>
+        </article>
+        <article class="fact-item" tabindex="0">
+          <h4>Perda anual de 13 milhões de hectares de florestas</h4>
+          <p>Quanto maior a destruição, maiores os impactos no clima global.</p>
+        </article>
+        <article class="fact-item" tabindex="0">
+          <h4>Reciclar e reduzir resíduos</h4>
+          <p>Contribui para evitar a poluição e preservar recursos naturais.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="tips" id="tips" aria-labelledby="dicas-title">
+      <h3 id="dicas-title">Dicas para Ajudar a Preservar</h3>
+      <ul class="tips-list">
+        <li>Reduza o consumo de plástico descartável.</li>
+        <li>Economize água e energia em casa.</li>
+        <li>Participe de mutirões de limpeza e plantio.</li>
+        <li>Prefira produtos sustentáveis e locais.</li>
+        <li>Eduque amigos e familiares sobre o tema.</li>
+      </ul>
+    </section>
+
+    <section class="cta" id="cta" aria-label="Chamada para ação">
+      <h3>Junte-se a Nós na Preservação</h3>
+      <p>O futuro do planeta depende das ações que tomamos hoje. Faça sua parte para proteger a natureza e inspire outros a fazerem o mesmo.</p>
+      <button class="btn" onclick="alert('Obrigado por querer ajudar! Visite organizações locais para se envolver.')">Quero Ajudar</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 Preserve a Natureza - Todos os direitos reservados</p>
+    <div class="social-links" aria-label="Redes sociais">
+      <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">👍</a>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+      <a href="https://www.twitter.com" target="_blank" rel="noopener" aria-label="Twitter">🐦</a>
+    </div>
+  </footer>
+</body>
+</html>
+
